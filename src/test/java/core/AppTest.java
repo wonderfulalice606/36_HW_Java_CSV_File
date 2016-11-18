@@ -1,4 +1,4 @@
-package core._HW_Java_Properties_File;
+package core;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

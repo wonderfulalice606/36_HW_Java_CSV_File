@@ -34,11 +34,11 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
-					<archive>
+					<!-- <archive>
 						<manifest>
 							<mainClass>core.HtmlUnitTry</mainClass>
 						</manifest>
-					</archive>
+					</archive> -->
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
@@ -54,5 +54,10 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<resources>
+     <resource>
+       <directory>src/main/resources</directory>
+     </resource>
+   </resources>
 	</build>
 </project>

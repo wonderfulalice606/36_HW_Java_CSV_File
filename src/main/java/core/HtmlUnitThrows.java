@@ -2,8 +2,10 @@ package core;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+//import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -12,15 +14,19 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 public class HtmlUnitThrows {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
-		String csvFile = "./src/main/resources/Test.csv";
-		BufferedReader br = null;
+		
+	    InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.csv");
+	    BufferedReader br=new BufferedReader(new InputStreamReader(in));
+		
+		//String csvFile = "./src/main/resources/Test.csv";
+		//BufferedReader br = null;
 		String line = null;
 		String cvsSplitBy = ";";
 		String text_case_id = null;
 		String url = null;
 		String title_expected = null;
 
-		br = new BufferedReader(new FileReader(csvFile));
+		//br = new BufferedReader(new FileReader(csvFile));
 		WebDriver driver = new HtmlUnitDriver();
 		while ((line = br.readLine()) != null) {
 

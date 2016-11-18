@@ -1,9 +1,11 @@
 package core;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+//import java.io.FileNotFoundException;
+//import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -15,19 +17,19 @@ public class HtmlUnitTry {
 
 	public static void main(String[] args) {
 
-		String csvFile = "./src/main/resources/Test.csv";
-		BufferedReader br = null;
+		
+
+		InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.csv");
+	    BufferedReader br=new BufferedReader(new InputStreamReader(in));
+		
+		//String csvFile = "./src/main/resources/Test.csv";
+		//BufferedReader br = null;
 		String line = null;
 		String SplitBy = ";";
 		String text_case_id = null;
 		String url = null;
 		String title_expected = null;
 
-		try {
-			br = new BufferedReader(new FileReader(csvFile));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
 		WebDriver driver = new HtmlUnitDriver();
 		//Turning HtmlUnit Warnings off 
 	    //BEGIN        
