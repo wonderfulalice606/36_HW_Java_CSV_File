@@ -17,7 +17,7 @@ public class LoadResources {
 //	    System.out.println(input.toString());
 	   
 		
-	    InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.txt");
+	    InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("./test.txt");
 	    BufferedReader reader=new BufferedReader(new InputStreamReader(in));
 	    String line;
 	    while((line=reader.readLine())!=null) {

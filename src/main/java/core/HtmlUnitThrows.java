@@ -15,7 +15,7 @@ public class HtmlUnitThrows {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		
-	    InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.csv");
+	    InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("./Test.csv");
 	    BufferedReader br=new BufferedReader(new InputStreamReader(in));
 		
 		//String csvFile = "./src/main/resources/Test.csv";
